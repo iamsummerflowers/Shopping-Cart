@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> E-Commerce Page </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+        <meta property="og:title" content="">
+        <meta property="og:type" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+      
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+      
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+      
+        <meta name="theme-color" content="#fafafa">
+
+        <!-- font awesome  -->
+        <script src="https://kit.fontawesome.com/bec7436308.js" crossorigin="anonymous"></script>
+        <!-- end of font awesome  -->
+        
+        <!--  custom css  -->
+        <link rel="stylesheet" href="styles.css">
+        <!--  end of custom css  -->
+
+    </head>
+   
+    <body>    
+        <!-- HEADER -->
+
+        <!-- navbar -->
+        <nav class="navbar">
+        <div class="navbar-center">
+            <span class="nav-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+            <img src="./img/blocks.png" alt="block-logo">
+            <div class="cart-btn">
+                <span class="nav-icon">
+                    <i class="fas fa-cart-plus"></i>
+                </span>
+                <div class="cart-items">0</div>
+            </div>
+        </div>
+        </nav>
+        <!-- end of navbar  -->
+
+        <!--------- END HEADER SECTION ------------------->
+
+        <!-- HERO SECTION -->
+
+        <header class="hero"> 
+            <div class="banner">
+                <h1 class="banner-title">furniture collection</h1>
+                <button class="banner-btn">shop now</button>
+            </div>
+        </header>
+
+        <!------ END OF HERO SECTION ----------->
+
+        <!--PRODUCTS-->
+        <div class="products">
+            <div class="section-title">
+                <h2>our products</h2>
+            </div>
+            <div class="products-center">
+                <!-- single product  -->
+                <article class="product">
+                    <div class="img-container">
+                        <img src="./img/product1.jpg" alt="product" class="product-img">
+                        <button class="bag-btn" data-id="1">
+                            <i class="fas fa-shopping-cart"></i>
+                            add to bag
+                        </button>
+                    </div>
+                    <h3>queen bed</h3>
+                    <h4>$16</h4>
+                </article>
+                <!-- end of single product  -->
+                <!-- single product  -->
+                <article class="product">
+                    <div class="img-container">
+                        <img src="./img/product1.jpg" alt="product" class="product-img">
+                        <button class="bag-btn" data-id="1">
+                            <i class="fas fa-shopping-cart"></i>
+                            add to bag
+                        </button>
+                    </div>
+                    <h3>queen bed</h3>
+                    <h4>$16</h4>
+                </article>
+                <!-- end of single product  -->
+                <!-- single product  -->
+                <article class="product">
+                    <div class="img-container">
+                        <img src="./img/product1.jpg" alt="product" class="product-img">
+                        <button class="bag-btn" data-id="1">
+                            <i class="fas fa-shopping-cart"></i>
+                            add to bag
+                        </button>
+                    </div>
+                    <h3>queen bed</h3>
+                    <h4>$16</h4>
+                </article>
+                <!-- end of single product  -->
+
+            </div>
+        </div>
+
+        <!-------END OF PRODUCTS SECTION------------------------->
+        
+        <!--FOOTER-->
+
+        <!---------- END OF FOOTERSECTION ------------------>
+        
+        
+        <!-----------ADDITIONAL APPLICATIONS----------------------------------------------------------------->
+
+        <!-- Add your site or application content here -->
+        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="app.js"></script> <!-- links app js file -->
+        <script src="product.json"></script> <!-- links product js file -->
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+            ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async></script>
+   </body>
+</html>
