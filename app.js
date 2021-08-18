@@ -7,7 +7,7 @@ const cartOverlay = document.querySelector(".cart-overlay");
 const cartItem = document.querySelector(".close-item");
 const cartTotal = document.querySelector(".close-total");
 const cartContent = document.querySelector(".cart-content");
-const productDOM = document.querySelector(".products-center");
+const productsDOM = document.querySelector(".products-center");
 
 // 2. create cart item
 let cart = [];
@@ -35,8 +35,28 @@ class Products{
 //4. display products - responsible for getting items returned from product and displaying them, maniulating them, or retrieving them //ads data dynamically (comment out single item in html)
 class UI {
  displayProducts(products){
-    console.log(products);
-
+    let result = '';
+    products.forEach(product => {
+      result += `
+        <!-- single product  -->
+            <article class="product">
+                <div class="img-container">
+                    <img 
+                    src=${product.image} 
+                    alt="product" 
+                    class="product-img">
+                    <button class="bag-btn" data-id=${product.id}>
+                        <i class="fas fa-shopping-cart"></i>
+                        add to bag
+                    </button>
+                </div>
+                <h3>${product.title}</h3>
+                <h4>$${product.price}</h4>
+            </article>
+        <!-- end of single product  -->
+      `;
+    });
+    productsDOM.innerHTML = result;
  }
 }
 
