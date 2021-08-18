@@ -11,6 +11,8 @@ const productsDOM = document.querySelector(".products-center");
 
 // 2. create cart item
 let cart = [];
+//buttons
+let buttonsDOM = [];
 
 //3. responsible for getting the products first locally and then from json //setup method
 class Products{
@@ -58,18 +60,59 @@ class UI {
     });
     productsDOM.innerHTML = result;
  }
+ getBagButtons(){
+  const buttons = [...document.querySelectorAll(".bag-btn")]; //used spread operator (...) not node list
+  buttonsDOM = buttons;
+  buttons.forEach(button => {
+   let id = button.dataset.id;
+   let inCart = cart.find(item => item.id === id);
+   if(inCart){
+    button.innerText = "In Cart";
+    button.disabled = true;
+   }
+    button.addEventListener("click", event =>{
+        event.target.innerText = "In Cart";
+        event.target.disabled = true;
+        // get product from products
+        let cartItem = {...Storage.getProduct(id), amount:1};
+        console.log(cartItem);
+        // add product to the cart
+        // save cart in local storage
+        // set cart values
+        // display cart item
+        // show the cart 
+
+    });
+
+  });
+
+ }
 }
 
 //5. local storage class that deals with local storage
 class Storage {
-
+ static saveProducts(products){
+     localStorage.setItem("products",JSON.stringify(products));
+ }
+ static getProduct(id){
+     let products = JSON.parse(localStorage.getItem('products'));
+     return products.find(product => product.id === id);
+ }
 }
 
 //6. call functions in 3 and 4 here
 document.addEventListener("DOMContentLoaded",()=>{
-const ui = new UI();
-const products = new Products();
+ const ui = new UI();
+ const products = new Products();
 
 // 7. get all products go back to 3 and grab data from json
-products.getProducts().then(products => ui.displayProducts(products));
+products.getProducts().then(products => 
+{
+ ui.displayProducts(products) //method to display products
+ Storage.saveProducts(products); //method to save products
+}).then(() => {
+ ui.getBagButtons();
+
+});
+
 });
